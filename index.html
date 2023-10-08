@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="if-else" style="background-color: aqua; padding: 20px">
+      <h3>IF ELSE</h3>
+      <p>program bilangan ganjil genap</p>
+      <input type="number" id="inputan-ifelse" />
+      <button type="button" onclick="ifelse()">Submit</button>
+      <h4>Hasil : <span id="hasil"></span></h4>
+    </div>
+
+    <div
+      class="switch-case"
+      style="background-color: blueviolet; padding: 20px"
+    >
+      <h3>SWITCH CASE</h3>
+      <p>daftar menu restoran khas makassar :</p>
+      <p>1. kapurung</p>
+      <p>2. coto makassar</p>
+      <p>3. pallubasa</p>
+      <p>masukkan pesanan anda(1/2/3) :</p>
+      <input type="number" id="inputan-switch" />
+      <button type="button" onclick="switchcase()">Pesan</button>
+      <br />
+      <h4>Pesanan anda : <span id="pesanan"></span></h4>
+    </div>
+
+    <div class="for" style="background-color: chartreuse; padding: 20px">
+      <h3>FOR STATEMENT</h3>
+      <p>perhitungan</p>
+      <input type="number" id="inputan-for" />
+      <button type="button" onclick="forstatement()">mulai</button>
+      <p>Hasil: <span id="hasilfor"></span></p>
+    </div>
+
+    <div class="do-while" style="background-color: tomato; padding: 20px">
+      <h3>DO-WHILE</h3>
+      <p>Klik tombol untuk menghitung angka dari 1 hingga 5:</p>
+      <button onclick="hitungAngka()">Hitung</button>
+      <p>Hasil: <span id="hasilhitung"></span></p>
+    </div>
+
+    <div class="function" style="background-color: aquamarine; padding: 20px">
+      <h3>FUNCTION</h3>
+      <p>program saya diatas sudah menggunakan function</p>
+    </div>
+    <script>
+      function ifelse() {
+        let a = parseInt(document.getElementById("inputan-ifelse").value);
+
+        if (a < 11) {
+          if (a % 2 == 0) {
+            document.getElementById("hasil").innerHTML = "bilangan genap";
+          } else {
+            document.getElementById("hasil").innerHTML = "bilangan ganjil";
+          }
+        } else {
+          document.getElementById("hasil").innerHTML =
+            "maaf program ini dibuat hanya untuk bilangan 1 -10";
+        }
+      }
+
+      function switchcase() {
+        let a = parseInt(document.getElementById("inputan-switch").value);
+        switch (a) {
+          case 1:
+            document.getElementById("pesanan").innerHTML = "kapurung";
+            break;
+          case 2:
+            document.getElementById("pesanan").innerHTML = "coto makassar";
+            break;
+          case 3:
+            document.getElementById("pesanan").innerHTML = "pallubasa";
+            break;
+          default:
+            document.getElementById("pesanan").innerHTML =
+              "pesanan tidak ada di daftar menu";
+            break;
+        }
+      }
+
+      function forstatement() {
+        let a = parseInt(document.getElementById("inputan-for").value);
+        let hasil = "";
+        for (let i = 1; i <= a; i++) {
+          hasil += i + " ";
+          document.getElementById("hasilfor").innerHTML = hasil;
+        }
+      }
+
+      function hitungAngka() {
+        let angka = 1;
+        let hasil = " ";
+
+        do {
+          hasil += angka;
+          angka++;
+        } while (angka <= 5);
+
+        document.getElementById("hasilhitung").innerHTML = hasil;
+      }
+    </script>
+  </body>
+</html>
